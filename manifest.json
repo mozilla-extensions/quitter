@@ -7,8 +7,11 @@
 
   "name": "Quitter",
   "description": "Quit",
-  "version": "1.0.0",
+  "version": "1.0",
   "author": "Mozilla",
+  "permissions": [
+    "mozillaAddons"
+  ],
 
   "background": {
     "scripts": ["background.js"]
