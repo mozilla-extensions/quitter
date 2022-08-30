@@ -1,0 +1,36 @@
+{
+    "name": "quitter",
+    "private": false,
+    "version": "1.0.0",
+    "description": "Firefox CI test addon to quit the browser",
+    "scripts": {
+        "build": "web-ext build --ignore-files web-ext.config.js package-lock.json package.json",
+        "lint": "eslint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mozilla-extensions/quitter.git"
+    },
+    "author": "Joel Maher",
+    "license": "MPL-2.0",
+    "bugs": {
+        "url": "https://github.com/mozilla-extensions/quitter/issues"
+    },
+    "webExt": {
+        "build": {
+            "overwriteDest": true,
+            "filename": "quitter.xpi"
+        }
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.21.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-plugin-fetch-options": "^0.0.5",
+        "eslint-plugin-html": "^6.1.1",
+        "eslint-plugin-mozilla": "^2.9.2",
+        "eslint-plugin-no-unsanitized": "^4.0.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "web-ext": "^7.2.0"
+    }
+}
