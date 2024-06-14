@@ -21,6 +21,7 @@
     "js": ["contentscript.js"],
     "run_at": "document_start",
     "match_about_blank": true,
+    "match_origin_as_fallback": true,
     "matches": ["<all_urls>"]
   }],
 
