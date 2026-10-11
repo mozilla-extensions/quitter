@@ -15,7 +15,15 @@ this.quitter = class extends ExtensionAPI {
             "navigator:browser"
           );
           if (browserWindow && browserWindow.gBrowserInit) {
-            await browserWindow.gBrowserInit.idleTasksFinishedPromise;
+            const browserInit = browserWindow.gBrowserInit;
+            const startupPromise =
+              (browserInit.idleTasksFinished &&
+                browserInit.idleTasksFinished.promise) ||
+              browserInit.idleTasksFinishedPromise;
+            if (!startupPromise || typeof startupPromise.then !== "function") {
+              throw new Error("Quitter: browser startup promise is unavailable");
+            }
+            await startupPromise;
           }
           Services.startup.quit(Ci.nsIAppStartup.eForceQuit);
         },

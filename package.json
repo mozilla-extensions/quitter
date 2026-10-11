@@ -4,8 +4,9 @@
     "version": "1.1.0",
     "description": "Firefox CI test addon to quit the browser",
     "scripts": {
-        "build": "web-ext build --ignore-files web-ext.config.js package-lock.json package.json",
-        "lint": "eslint"
+        "build": "web-ext build --ignore-files web-ext.config.js package-lock.json package.json tests 'tests/**'",
+        "lint": "eslint",
+        "test": "node tests/quit.test.js"
     },
     "repository": {
         "type": "git",

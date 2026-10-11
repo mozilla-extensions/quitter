@@ -2,7 +2,7 @@
 
 const defaultConfig = {
   sourceDir: "./",
-  ignoreFiles: ["web-ext.config.js", "package-lock.js", "package.json"],
+  ignoreFiles: ["web-ext.config.js", "package-lock.js", "package.json", "tests", "tests/**"],
   build: {
     overwriteDest: true,
   }
